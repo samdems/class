@@ -1,0 +1,22 @@
+[
+    {
+        "name": "pause_for_a_while",
+        "code": "pause_for_a_while()",
+        "type": "function"
+    },
+    {
+        "name": "magical_light_on",
+        "code": "magical_light_on()",
+        "type": "function"
+    },
+    {
+        "name": "magical_light_off",
+        "code": "magical_light_off()",
+        "type": "function"
+    },
+    {
+        "name": "while forever:",
+        "code": "while forever:",
+        "type": "loop"
+    }
+]

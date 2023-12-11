@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"
+    integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
+    integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/python/python.min.js"
+    integrity="sha512-2M0GdbU5OxkGYMhakED69bw0c1pW3Nb0PeF3+9d+SnwN1ryPx3wiDdNqK3gSM7KAU/pEV+2tFJFbMKjKAahOkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+  <script type="module" src="./searchcursor.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-python.min.js"></script>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <button id="toggleLeftPane-button" onclick="toggleMidPane()">toggle notes</button>
+  <button id="toggleRightPane-button" onclick="toggleRightPane()">toggle code</button>
+
+  <div id="left-pane" style="display:none">
+
+    <md-block>
+    </md-block>
+  </div>
+  <div id="mid-pane">
+    <md-block>
+    </md-block>
+  </div>
+  <div id="right-pane">
+    <label for="lesson">Lesson:</label>
+    <select id="lesson" onchange="updatelesson(this.value)">
+    </select>
+    <label for="target">Target:</label>
+    <select id="target" onchange="connect(this.value)">
+      <button onclick="connect()">reconnect 🔄</button>
+    </select>
+    <div id="tabs">
+      <div id="tab-bar" class="tab-bar">
+
+
+        <!-- Add more tabs if needed -->
+      </div>
+      <!-- Add more tabs if needed -->
+
+      <div id="tab1" class="tab-content">
+
+
+        <div id="text">
+          <div class="code-pane">
+            <div id="function-names">
+            </div>
+            <textarea id="code" style="width: 100%;"></textarea>
+
+          </div>
+
+          <button onclick="runCode()">Run ⏱️</button>
+          <button onclick="stopCode()">Stop 🛑</button>
+        </div>
+      </div>
+
+
+    </div>
+    <div id="output"></div>
+  </div>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
